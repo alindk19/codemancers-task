@@ -1,0 +1,93 @@
+.createPostWrapper {
+  height: 100%;
+  width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+  /* position: relative; */
+}
+
+.header {
+  display: flex;
+  width: 100%;
+}
+
+.profile-image img {
+  height: 50px;
+  width: 50px;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  width: 100%;
+  border: none;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.extras {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.extras p {
+  padding: 5px;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.footer button {
+  padding: 5px 10px;
+  background-color: blue;
+  color: #ffffff;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.gif-container {
+  position: absolute;
+  height: 250px;
+  background-color: #ffffff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: pointer;
+  bottom: 0;
+  left: 2%;
+  top: 75%;
+  padding: 5px;
+  height: 300px;
+  width: 250px;
+}
+
+.giphy-image {
+  width: 60%;
+}
+
+.gif-container input {
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.gif-container img {
+  width: 250px;
+  height: 200px;
+}

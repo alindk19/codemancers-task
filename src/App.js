@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CreatePost from "./components/create-post/CreatePost";
+import React, { useEffect, useState } from "react";
+import Post from "./components/Post/Post";
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const onClose = () => {
+    setOpen(false);
+  };
+  const onOpen = () => {
+    setOpen(true);
+  };
+  const [posts, setPosts] = useState([]);
+  const localStoragePosts = localStorage.getItem("posts");
+  useEffect(() => {
+    setPosts(JSON.parse(localStoragePosts));
+  }, [localStoragePosts]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="create-post" onClick={() => setOpen(onOpen)}>
+        Create Post
+      </button>
+      <CreatePost open={open} onClose={onClose} />
+      {posts?.map((post) => (
+        <Post key={post?.date} post={post} />
+      ))}
     </div>
   );
 }
